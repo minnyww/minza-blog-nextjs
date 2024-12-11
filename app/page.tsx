@@ -10,7 +10,7 @@ export const metadata = {
 export default async function BlogList({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: any;
 }) {
   const posts = await getAllPosts();
   const params = await searchParams;
