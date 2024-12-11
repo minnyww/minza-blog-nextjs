@@ -4,14 +4,9 @@ import { format } from "date-fns";
 import Link from "next/link";
 import Image from "next/image";
 import { MDXComponents } from "@/components/mdx-components";
-import { serialize } from "next-mdx-remote/serialize";
 import { Suspense } from "react";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateMetadata({ params }: { params: any }) {
   const post = await getPostBySlug(params.slug);
   return {
     title: post?.title || "Blog Post",
@@ -62,10 +57,7 @@ export default async function PostPage({
       )}
       <Suspense fallback={<>Loading...</>}>
         <div className="prose dark:prose-invert max-w-none">
-          <MDXRemote
-            source={post.content}
-            // components={MDXComponents}
-          />
+          <MDXRemote source={post.content} components={MDXComponents} />
         </div>
       </Suspense>
     </article>
