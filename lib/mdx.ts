@@ -19,6 +19,7 @@ export async function getAllPosts() {
         title: string;
         excerpt: string;
         image: string;
+        tags: string[];
       }),
       image: data.image || "/placeholder.svg",
     };
@@ -41,6 +42,7 @@ export async function getPostBySlug(slug: string) {
       excerpt: string;
       author: string;
       image: string;
+      tags: string[];
     }),
     image: data.image || "/placeholder.svg",
   };

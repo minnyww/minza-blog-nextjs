@@ -9,15 +9,14 @@ import { Suspense } from "react";
 export async function generateMetadata({ params }: { params: any }) {
   const post = await getPostBySlug(params.slug);
   return {
-    title: post?.title || "Blog Post",
-    description: post?.excerpt || "A blog post",
+    title: post?.title,
+    description: post?.excerpt,
   };
 }
 
 export default async function PostPage({ params }: { params: any }) {
   const getParams = await params;
   const post = await getPostBySlug(getParams.slug);
-  console.log("post : ", post.content);
 
   if (!post) {
     return <div>Post not found</div>;

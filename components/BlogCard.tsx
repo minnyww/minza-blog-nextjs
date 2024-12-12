@@ -31,6 +31,17 @@ const BlogCard = ({ post }: any) => {
             {post.date}
           </p>
           <p className="mb-4">{post.excerpt}</p>
+          <div className="mb-2">
+            {post.tags &&
+              post.tags.map((tag: string) => (
+                <span
+                  key={tag}
+                  className="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2 mb-2"
+                >
+                  {tag}
+                </span>
+              ))}
+          </div>
           <Link
             href={`/posts/${post.slug}`}
             className="text-primary hover:underline"
