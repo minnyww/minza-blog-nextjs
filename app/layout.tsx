@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
+import SparklesText from "@/components/ui/sparkles-text";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,8 @@ export default function RootLayout({
         >
           <div className="max-w-2xl mx-auto py-10 px-4">
             <header className="flex justify-between items-center mb-8">
-              <h1 className="text-2xl font-bold">MinZa Blog</h1>
+              {/* <h1 className="text-2xl font-bold">MinZa Blog</h1> */}
+              <SparklesText text="Minza Blog" />
               <ModeToggle />
             </header>
             <main>{children}</main>
