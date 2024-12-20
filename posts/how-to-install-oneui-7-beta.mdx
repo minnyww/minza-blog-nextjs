@@ -1,0 +1,54 @@
+---
+title: "วิธีลง One UI 7 Beta Android 15 ใน S24 Ultra"
+date: "2024-12-20"
+excerpt: "วิธีลง One UI 7 Beta Android ใน S24 Ultra แบบง่ายๆ ด้วยวิธี adb sideload"
+author: "Min"
+image: "https://images.unsplash.com/photo-1675285776817-632fb95aff51?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+tags: ["mobilephone", "s24ultra"]
+---
+
+# วิธีลง One UI 7 Beta
+
+## ขั้นตอนที่ 1: ตรวจสอบความเข้ากันได้ของอุปกรณ์
+
+- ไปที่ การตั้งค่า (Settings) → เกี่ยวกับโทรศัพท์ (About Phone) → ดูหมายเลขรุ่น (Model Number)
+- ต้องเป็น SM-S928B เท่านั้น
+
+## ขั้นตอนที่ 2: สำรองข้อมูล
+
+สำรองข้อมูลสำคัญของคุณก่อนทำการติดตั้งเบต้า เพื่อป้องกันการสูญหายของข้อมูล
+
+# วิธีลง One UI 7 Beta ด้วยวิธี ADB Sideload
+
+## ขั้นตอนที่ 1: ดาวน์โหลดไฟล์อัปเดต
+
+ดาวน์โหลดไฟล์อัปเดต One UI 7 Beta จากเว็บไซต์ของ Samsung หรือแหล่งที่เชื่อถือได้
+
+- หรือไปที่ --> [XDA](https://xdaforums.com/t/beta-2-now-rolling-out-one-ui-7-beta-galaxy-s24-ultra-beta-thread-update-zip-files-news-and-discussion.4683065/)
+- ได้ไฟล์มาแล้ว ให้เปลี่ยนชื่อเป็น "update.zip"
+
+## ขั้นตอนที่ 2: ติดตั้ง ADB และ Fastboot
+
+ติดตั้ง ADB และ Fastboot บนคอมพิวเตอร์ของคุณ สามารถดาวน์โหลดได้จาก [Android Developer](https://developer.android.com/studio/releases/platform-tools)
+
+## ขั้นตอนที่ 3: เปิดโหมด Developer และเปิดใช้งาน USB Debugging
+
+ไปที่ "การตั้งค่า" > "เกี่ยวกับโทรศัพท์" > "ข้อมูลซอฟต์แวร์" แล้วแตะ "หมายเลขบิลด์" 7 ครั้งเพื่อเปิดโหมด Developer จากนั้นไปที่ "การตั้งค่า" > "ตัวเลือกสำหรับนักพัฒนา" และเปิดใช้งาน "การแก้ไขข้อบกพร่อง USB"
+
+## ขั้นตอนที่ 4: เชื่อมต่ออุปกรณ์กับคอมพิวเตอร์
+
+เชื่อมต่ออุปกรณ์ของคุณกับคอมพิวเตอร์ผ่านสาย USB
+
+## ขั้นตอนที่ 5: บูตเข้าสู่โหมด Recovery
+
+ปิดอุปกรณ์ของคุณ จากนั้นกดปุ่มเพิ่มเสียง + ปุ่มเปิด/ปิดเครื่องพร้อมกันเพื่อบูตเข้าสู่โหมด Recovery หรือพิม `bash"adb reboot recovery"` ใน Terminal หรือ Command Prompt
+
+## ขั้นตอนที่ 6: ใช้ ADB Sideload
+
+ในโหมด Recovery เลือก "Apply update from ADB" จากนั้นเปิด Terminal หรือ Command Prompt บนคอมพิวเตอร์ของคุณและพิมพ์คำสั่งต่อไปนี้:
+
+```bash
+adb sideload update.zip
+```
+
+รอลงเสร็จ เครื่องจะเปิดเครื่องใหม่อัตโนมัติ และคุณก็เสร็จสิ้นการอัปเดต One UI 7 Beta บน S24 Ultra ของคุณแล้ว
